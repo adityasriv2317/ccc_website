@@ -67,7 +67,7 @@ const Landing = () => {
         </p>
 
         <div
-          className="font-jetbrains text-base sm:text-lg md:text-xl font-semibold text-black mt-4 mx-0 py-4 px-8 animate-sr bg-no-repeat bg-center bg-contain cursor-pointer w-fit mx-auto"
+          className="font-jetbrains text-base sm:text-lg md:text-xl font-semibold text-black mt-4 mx-0 py-4 px-8 animate-sr bg-no-repeat bg-center bg-contain cursor-pointer w-fit"
           style={{
             backgroundImage: `url(${button})`,
             backgroundSize: "contain",
