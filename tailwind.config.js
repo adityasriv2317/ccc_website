@@ -16,9 +16,21 @@ export default {
           '0%': { transform: 'translateX(200%) rotate(100deg)', opacity: '0' },
           '100%': { transform: 'translateX(0) rotate(0deg)', opacity: '1' },
         },
+        sDown: {
+          '0%': { transform: 'translateY(-200%)', opacity: '0' },
+          '70%': { transform: 'translateY(30%)',},
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        sright: {
+          '0%': { transform: 'translateX(-200%)', opacity: '0' },
+          '70%': { transform: 'translateX(5%)',},
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
       },
       animation: {
         slideIn: 'slide 1s ease-out',
+        sd: 'sDown 1s ease-in-out',
+        sr: 'sright 1s ease-in-out',
       },
     },
   },
