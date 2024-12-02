@@ -12,7 +12,7 @@ import './style.css'
 
 const Socials = () => {
   return (
-    <div className="socials mx-7 hidden md:flex text-[rgb(150,198,245)] justify-center items-center space-x-6">
+    <div className="socials hidden md:flex text-[rgb(150,198,245)] justify-center items-center space-x-6">
       <a
         href="https://facebook.com"
         target="_blank"
