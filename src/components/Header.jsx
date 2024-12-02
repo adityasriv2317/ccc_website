@@ -38,6 +38,14 @@ const Header = () => {
               Contact
             </a>
           </li>
+          <li>
+            <a
+              href="#event"
+              className="hover:bg-[rgb(150,198,245)] py-2 px-3 hover:text-black hover:underline-offset-4 hover:underline cursor-pointer transition-all duration-300 ease-out"
+            >
+              Events
+            </a>
+          </li>
         </ul>
       </nav>
 

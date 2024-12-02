@@ -1,8 +1,54 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import bg from "../assets/landing.png";
 import button from "../assets/button.png";
 import wires from "../assets/wires.png";
 import logo from "../assets/CCC.png";
+
+// bar function
+const ProgressBar = ({ label }) => {
+  let segmentCount = 40;
+
+  // state
+  const [animatedSegments, setAnimatedSegments] = useState([]);
+
+  // generate block opacity
+  useEffect(() => {
+    const generateAnimationStyles = () => {
+      return Array(segmentCount)
+        .fill(null)
+        .map(() => ({
+          animation: `pulsate ${Math.random() * 2 + 1}s infinite`,
+        }));
+    };
+
+    // 10 sec timer
+    const interval = setInterval(() => {
+      // set array of bars via random generation function
+      setAnimatedSegments(generateAnimationStyles());
+    }, 10000);
+    setAnimatedSegments(generateAnimationStyles());
+    return () => clearInterval(interval);
+  }, [segmentCount]);
+
+  // render bars
+  return (
+    <div className="mt-6 flex justify-between">
+      <div className="text-white font-jetbrains text-xl mr-6 font-semibold">
+        {label}
+      </div>
+      <div className="flex">
+        {animatedSegments.map((style, index) => (
+          <div
+            key={index}
+            className="w-1 h-8 mr-1 bg-[rgb(0,100,194)]"
+            style={style}
+          ></div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Landing = () => {
   return (
@@ -76,6 +122,13 @@ const Landing = () => {
         >
           Explore
         </div>
+      </div>
+
+      {/* progress barr animation */}
+      <div className="h-40 hidden md:block absolute bottom-20 right-10 p-10">
+        <ProgressBar label="THINK" />
+        <ProgressBar label="DEVELOP" />
+        <ProgressBar label="DEPLOY" />
       </div>
     </div>
   );
