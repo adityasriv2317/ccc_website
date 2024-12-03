@@ -1,7 +1,25 @@
+
+// import React from 'react'
+// import Carousel from './components/Carousel'
+// import Contact from './components/Contact'
+// import Registration from './components/Registration'
+
+// const App = () => {
+//   return (
+//     <>
+//      <Carousel/>
+//      <Contact/>
+//      <Registration/>
+//     </>
+//   )
+// }
 import React from "react";
 import Header from "./components/Header";
 import Landing from "./components/Landing";
 // import About from "./components/About";
+// import About from "./components/About";
+import Registration from "./components/Registration";
+import Contact from "./components/Contact";
 
 const App = () => {
   return (
