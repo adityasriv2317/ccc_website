@@ -74,7 +74,7 @@ const Landing = () => {
           </div>
 
           <div
-            className="font-jetbrains text-base sm:text-lg md:text-xl font-semibold text-black mt-12 md:mt-16 py-4 px-8 bg-no-repeat bg-center bg-contain cursor-pointer w-fit mx-auto"
+            className="font-jetbrains animate-pulse hover:animate-zoom text-base sm:text-lg md:text-xl font-semibold text-black mt-12 md:mt-16 py-4 px-8 bg-no-repeat bg-center bg-contain cursor-pointer w-fit mx-auto"
             style={{
               backgroundImage: `url(${button})`,
             }}
@@ -92,17 +92,17 @@ const Landing = () => {
           <img
             src={logo}
             alt="Logo"
-            className="z-10 absolute mx-auto animate-slideIn top-48 mb-4 w-36 h-36"
+            className="z-[5] absolute mx-auto animate-slideIn top-48 mb-4 w-36 h-36"
           />
         </div>
       </div>
 
       {/* about page content */}
-      <div className="text-white text-left absolute left-5 md:left-20 top-[65vh] mx-4 md:mx-0">
-        <h1 className="font-poppins mb-5 shadow-sm text-[rgb(150,198,245)] animate-sd text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+      <div className="text-white z-20 text-left absolute left-1 md:left-20 top-[65vh] mx-4 md:mx-0">
+        <h1 className="font-poppins mb-5 shadow-sm text-[rgb(150,198,245)] [text-shadow:0_0_5px_blue] animate-sd text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
           ABOUT US
         </h1>
-        <p className="font-jetbrains overflow-y-auto mx:max-h-[18vh] animate-sr text-sm sm:text-base md:text-lg">
+        <p className="font-jetbrains [text-shadow:0_0_5px_black] overflow-y-auto mx:max-h-[18vh] animate-sr text-sm sm:text-base md:text-lg">
           Founded in February 2016, the Cloud <br />
           Computing Cell at AKGEC empowers students <br />
           with expertise across diverse domains like <br />
@@ -112,16 +112,18 @@ const Landing = () => {
           and Cloud Technologies.
         </p>
 
-        <div
-          className="font-jetbrains text-base sm:text-lg md:text-xl font-semibold text-black mt-4 mx-0 py-4 px-8 animate-sr bg-no-repeat bg-center bg-contain cursor-pointer w-fit"
-          style={{
-            backgroundImage: `url(${button})`,
-            backgroundSize: "contain",
-            backgroundPosition: "center",
-          }}
-        >
-          Explore
-        </div>
+        <a href="#team">
+          <button
+            className="font-jetbrains text-base sm:text-lg md:text-xl font-semibold text-black mt-4 mx-0 py-4 px-8 animate-sr bg-no-repeat bg-center bg-contain cursor-pointer w-fit"
+            style={{
+              backgroundImage: `url(${button})`,
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+            }}
+          >
+            Explore
+          </button>
+        </a>
       </div>
 
       {/* progress barr animation */}
