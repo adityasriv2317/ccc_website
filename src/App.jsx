@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import Landing from "./components/Landing";
-import About from "./components/About";
+// import About from "./components/About";
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
       <Header />
       <Landing />
 
-      <About />
+      {/* <About /> */}
 
       {/* Additional Sections */}
       <div className="about-section w-[100vw] h-screen bg-gray-600 flex items-center justify-center">
