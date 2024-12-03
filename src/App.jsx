@@ -19,6 +19,8 @@ import Landing from "./components/Landing";
 // import About from "./components/About";
 import Registration from "./components/Registration";
 import Contact from "./components/Contact";
+// import Carousel from './components/Carousel'
+
 
 const App = () => {
   return (
@@ -28,6 +30,7 @@ const App = () => {
       {/* <About /> */}
       <Contact></Contact>
       <Registration/>
+      {/* <Carousel></Carousel> */}
       {/* Additional Sections */}
       <div className="about-section w-[100vw] h-screen bg-gray-600 flex items-center justify-center">
         <h1 className="text-4xl">Team Section</h1>
