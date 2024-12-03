@@ -496,7 +496,7 @@ const Registration = () => {
           <div className="flex justify-center items-center">
               <span className="text-red-700 text-3xl">*</span>
         <ReCAPTCHA
-          sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" 
+          sitekey="6Lcd2CMpAAAAAKLqwdxjTgnWwzSgAGEgtl0BVOng" 
           onChange={handleRecaptchaChange}
         />
       </div>
