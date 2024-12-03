@@ -12,6 +12,10 @@ export default {
       },
       screens: { 'mx': {'max': '640px'}, },
       keyframes: {
+        zoomUp: {
+          '0%': { transform: 'scale(80%)'},
+          '100%': { transform: 'scale(100%)'},
+        },
         zoomIn: {
           '0%': { transform: 'scale(100%)'},
           '100%': { transform: 'scale(110%)'},
@@ -27,7 +31,6 @@ export default {
         },
         sUp: {
           '0%': { transform: 'translateY(200%)', opacity: '0' },
-          // '70%': { transform: 'translateY(-30%)',},
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
         sright: {
@@ -38,6 +41,7 @@ export default {
       },
       animation: {
         zoom: 'zoomIn 0.5s ease-in-out forwards',
+        zoomup: 'zoomUp 1s ease-in-out',
         slideIn: 'slide 1s ease-out',
         sd: 'sDown 1s ease-in-out',
         su: 'sUp 1s ease-in-out',

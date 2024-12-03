@@ -20,7 +20,7 @@ const Carousel = () => {
     autoplaySpeed: 3000,
     beforeChange: (current, next) => {
       setIsAnimating(true);
-      setTimeout(() => setIsAnimating(false), 1000); // Animation duration
+      setTimeout(() => setIsAnimating(false), 1000);
       setActiveSlide(next);
     },
     responsive: [
@@ -46,8 +46,9 @@ const Carousel = () => {
   };
 
   return (
-    <div className="mt-10 mb-20 px-4 md:px-8 lg:px-16 relative">
-      <div className="absolute bg-[rgba(56,72,87,0.4)] rounded-2xl text-4xl font-albert font-bold [text-shadow:0_0_10px_black] text-center bg-opacity-20 backdrop-blur-sm z-40 bottom-0 h-full w-3/4 right-0 flex items-center justify-center">
+    <div className="mt-10 mb-20 items-center justify-center w-1/2 md:w-full mx-auto md:px-8 lg:px-16 relative">
+      {/* Heading */}
+      <div className="absolute hidden md:flex bg-[rgba(56,72,87,0.4)] rounded-2xl text-4xl font-albert font-bold [text-shadow:0_0_10px_black] text-center bg-opacity-20 backdrop-blur-sm z-30 bottom-0 mx:max-h-[28vh] max-w-[70vw] md:h-[46vh] md:w-[75vw] right-0 items-center justify-center">
         OUR TEAM
       </div>
 
@@ -56,7 +57,7 @@ const Carousel = () => {
         {obj.map((card, index) => (
           <div
             key={index}
-            className={`flex flex-col md:flex-row items-center gap-6 md:gap-8 p-4 shadow-lg rounded-lg transform transition-transform ${
+            className={`flex flex-col md:flex-row items-center gap-4 md:gap-8 p-4 shadow-lg rounded-lg transform transition-transform ${
               index === activeSlide ? "scale-110" : "scale-95"
             }`}
           >
@@ -74,10 +75,12 @@ const Carousel = () => {
                     isAnimating ? "animate-su" : ""
                   }`}
                 >
-                  <h2 className="text-lg font-bold">
+                  <h2 className="text-lg font-bold sm:text-sm md:text-base">
                     {card.name} {card.surName}
                   </h2>
-                  <p className="text-sm">{card.designation}</p>
+                  <p className="text-sm sm:text-sm md:text-md">
+                    {card.designation}
+                  </p>
                 </div>
               )}
             </div>
