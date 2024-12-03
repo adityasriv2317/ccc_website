@@ -3,58 +3,26 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
-// imgs
-import learn from "../images/learn.jpg";
-import wwe from "../assets/about/2k24.jpg";
-import gow from "../assets/about/gow.jpg";
-import so from "../assets/about/so.jpg";
-import tod from "../assets/about/tod.jpg";
+// team data
+import obj from "./teamdata";
 
 const Carousel = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-
-  const obj = [
-    {
-      name: "Shivam",
-      surName: "Sharma",
-      designation: "React Developer",
-      img: learn,
-    },
-    {
-      name: "WWE",
-      surName: "2K24",
-      designation: "UI Designer",
-      img: wwe,
-    },
-    {
-      name: "God",
-      surName: "of War",
-      designation: "Backend Developer",
-      img: gow,
-    },
-    {
-      name: "Diablo",
-      surName: "IV",
-      designation: "DevOps Engineer",
-      img: so,
-    },
-    {
-      name: "Total",
-      surName: "OverDose",
-      designation: "Product Manager",
-      img: tod,
-    },
-  ];
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 800,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
-    beforeChange: (current, next) => setActiveSlide(next),
+    autoplaySpeed: 3000,
+    beforeChange: (current, next) => {
+      setIsAnimating(true);
+      setTimeout(() => setIsAnimating(false), 1000); // Animation duration
+      setActiveSlide(next);
+    },
     responsive: [
       {
         breakpoint: 1024,
@@ -79,17 +47,10 @@ const Carousel = () => {
 
   return (
     <div className="mt-10 mb-20 px-4 md:px-8 lg:px-16 relative">
-      {/* Active Slide Data */}
-      <div className="text-center mb-8 animate-sd">
-        <h2 className="text-2xl font-bold text-white">
-          {obj[activeSlide].name} {obj[activeSlide].surName}
-        </h2>
-        <p className="text-lg text-violet-400">
-          {obj[activeSlide].designation}
-        </p>
+      <div className="absolute bg-[rgba(56,72,87,0.4)] rounded-2xl text-4xl font-albert font-bold [text-shadow:0_0_10px_black] text-center bg-opacity-20 backdrop-blur-sm z-40 bottom-0 h-full w-3/4 right-0 flex items-center justify-center">
+        OUR TEAM
       </div>
 
-      <div className="absolute bg-white rounded-2xl text-center bg-opacity-20 backdrop-blur-sm z-40 bottom-0 h-4/5 w-3/4 right-0">OUR TEAM</div>
       {/* Carousel */}
       <Slider {...settings}>
         {obj.map((card, index) => (
@@ -100,12 +61,25 @@ const Carousel = () => {
             }`}
           >
             {/* Image Section */}
-            <div className="img w-40 h-40 md:w-64 md:h-80 flex-shrink-0 rounded-lg overflow-hidden shadow-md">
+            <div className="img w-40 h-40 md:w-64 md:h-80 flex-shrink-0 rounded-lg overflow-hidden shadow-md relative">
               <img
                 src={card.img}
                 className="object-cover w-full h-full"
                 alt={`${card.name} ${card.surName}`}
               />
+              {/* Active Slide Data */}
+              {index === activeSlide && (
+                <div
+                  className={`absolute bottom-0 left-0 w-full [text-shadow:0_0_10px_black] bg-gradient-to-t from-[rgb(7,11,25)] to-transparent text-white py-2 text-center transition-opacity ${
+                    isAnimating ? "animate-su" : ""
+                  }`}
+                >
+                  <h2 className="text-lg font-bold">
+                    {card.name} {card.surName}
+                  </h2>
+                  <p className="text-sm">{card.designation}</p>
+                </div>
+              )}
             </div>
           </div>
         ))}
