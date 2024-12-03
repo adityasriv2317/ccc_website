@@ -8,11 +8,11 @@ import Carousel from "./Carousel";
 const About = () => {
   return (
     <div
-      className="landing-page overflow-hidden bg-no-repeat h-[100vh] md:h-[875px]"
+      className="about-page overflow-hidden bg-[rgb(8,8,8)] bg-no-repeat min-h-[100vh] md:min-h-[900px]"
       style={{
         backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundSize: "contain",
+        backgroundPosition: "top",
       }}
     >
       <div className="blocks flex w-full justify-between absolute z-10 mt-20">
@@ -22,10 +22,10 @@ const About = () => {
 
       <div className="mx-auto items-center mt-28">
         {/* img */}
-        <img src={team} className="mx-auto" alt="" />
+        <img src={team} className="mx-auto w-1/2" alt="" />
 
         <div
-          className="relative bottom-16 left-6 z-2 text-center font-albert font-semibold text-base sm:text-2lg md:text-4xl shadow-sm text-black py-4 px-8 bg-no-repeat bg-center bg-contain cursor-pointer w-fit"
+          className="relative mx-auto mt-4 z-2 text-center font-albert font-semibold text-sm sm:text-md md:text-[4vw] shadow-sm text-black py-6 px-10 bg-no-repeat bg-center bg-cover w-fit"
           style={{
             backgroundImage: `url(${button})`,
           }}

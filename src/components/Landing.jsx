@@ -92,17 +92,17 @@ const Landing = () => {
           <img
             src={logo}
             alt="Logo"
-            className="z-10 absolute mx-auto animate-slideIn top-48 mb-4 w-36 h-36"
+            className="z-[5] absolute mx-auto animate-slideIn top-48 mb-4 w-36 h-36"
           />
         </div>
       </div>
 
       {/* about page content */}
-      <div className="text-white text-left absolute left-5 md:left-20 top-[65vh] mx-4 md:mx-0">
-        <h1 className="font-poppins mb-5 shadow-sm text-[rgb(150,198,245)] animate-sd text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+      <div className="text-white z-20 text-left absolute left-1 md:left-20 top-[65vh] mx-4 md:mx-0">
+        <h1 className="font-poppins mb-5 shadow-sm text-[rgb(150,198,245)] [text-shadow:0_0_5px_blue] animate-sd text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
           ABOUT US
         </h1>
-        <p className="font-jetbrains overflow-y-auto mx:max-h-[18vh] animate-sr text-sm sm:text-base md:text-lg">
+        <p className="font-jetbrains [text-shadow:0_0_5px_black] overflow-y-auto mx:max-h-[18vh] animate-sr text-sm sm:text-base md:text-lg">
           Founded in February 2016, the Cloud <br />
           Computing Cell at AKGEC empowers students <br />
           with expertise across diverse domains like <br />

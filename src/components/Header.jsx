@@ -3,7 +3,7 @@ import Socials from "./Socials";
 
 const Header = () => {
   return (
-    <div className="text-white fixed z-40 flex justify-between w-screen px-10 py-3 bg-[rgba(32,32,32,0.38)]">
+    <div className="text-white fixed z-40 flex justify-between w-screen px-10 py-3 bg-[rgba(32,32,32,0.8)] backdrop-blur-sm">
       <nav className="w-full my-2 md:w-3/5">
         <ul className="flex justify-center md:justify-start space-x-4 list-none">
           <li>
