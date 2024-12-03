@@ -28,3 +28,11 @@ body {
     opacity: 0.5;
   }
 }
+
+.cgame img{
+  width: 18vw;
+  opacity: 0;
+}
+.active img{
+  opacity: 1;
+}

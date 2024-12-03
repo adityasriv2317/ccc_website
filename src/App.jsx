@@ -1,12 +1,15 @@
 import React from "react";
 import Header from "./components/Header";
 import Landing from "./components/Landing";
+import About from "./components/About";
 
 const App = () => {
   return (
     <div className="text-white font-poppins overflow-x-hidden">
       <Header />
       <Landing />
+
+      <About />
 
       {/* Additional Sections */}
       <div className="about-section w-[100vw] h-screen bg-gray-600 flex items-center justify-center">
