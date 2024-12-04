@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <>
+    <div id='contact'>
      
       <div className='text-white mt-32 flex justify-center items-center flex-col bg-red-400 w-4/12 h-auto py-5 rounded-md '>
       <h1 className='text-4xl text-start block'>Let's connect Networks</h1>
@@ -23,7 +23,7 @@ const Contact = () => {
         </div>
         </form>
       </div>
-    </>
+    </div>
   )
 }
 
