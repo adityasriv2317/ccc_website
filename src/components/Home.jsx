@@ -6,7 +6,7 @@ import About from "./About";
 import Mentor from "./Mentor";
 import Contact from "./Contact";
 import Header from "./Header";
-import Splash from "../splash/Splash";
+import Splash from "./Splash";
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -14,7 +14,7 @@ const Home = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);

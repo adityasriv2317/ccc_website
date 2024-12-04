@@ -94,13 +94,13 @@ const Landing = () => {
           <img
             src={logo}
             alt="Logo"
-            className="z-[5] absolute mx-auto animate-slideIn top-48 mb-4 w-36 h-36"
+            className="z-[5] absolute mx-auto animate-slideIn md:top-[14vw] mb-4 w-36 h-36"
           />
         </div>
       </div>
 
       {/* about page content */}
-      <div className="text-white z-20 text-left absolute left-1 md:left-20 top-[65vh] mx-4 md:mx-0">
+      <div className="text-white mx:bg-[rgba(75,85,99,0.2)] z-20 text-left absolute left-1 md:left-20 mx:top-25 top-[65vh] mx-4 mx:px-2 mx:py-2 md:mx-0">
         <h1 className="font-poppins mb-5 shadow-sm text-[rgb(150,198,245)] [text-shadow:0_0_5px_blue] animate-sd text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
           ABOUT US
         </h1>
@@ -108,7 +108,6 @@ const Landing = () => {
           Founded in February 2016, the Cloud Computing Cell at AKGEC empowers
           students with expertise across diverse domains like Web Development,
           Machine Learning, UI/UX Design, Backend Development, Cybersecurity,
-          <br />
           and Cloud Technologies.
         </p>
 

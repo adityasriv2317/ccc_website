@@ -36,3 +36,39 @@ body {
 .active img{
   opacity: 1;
 }
+
+/* splash animations */
+
+/* bg opacity down */
+@keyframes bgdown{
+  0%{
+    opacity: 1;
+  }
+  80%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+/* text drop */
+@keyframes drop{
+  0%{
+    transform: translateY(-100%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.splashDiv{
+  animation-name: bgdown;
+  animation-duration: 5s;
+}
+
+.splashDiv .txt span{
+  animation-name: drop;
+  animation-duration: 1s;
+  transition: ease-out;
+}
