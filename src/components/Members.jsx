@@ -13,6 +13,7 @@ import prakhar from "../assets/team/prakharSrivastava.jpg";
 import kratika from "../assets/team/kratikaGupta.jpg";
 import kritika from "../assets/team/kritika.jpg";
 import harsh from "../assets/team/harshSingh.jpeg";
+import manoj from "../assets/team/manoj.jpg";
 import akshat from "../assets/team/akshatSingh.jpg";
 import aditya from "../assets/team/adityaKumar.jpeg";
 
@@ -59,12 +60,12 @@ const obj = [
   //   designation: "ML Developer",
   //   img: tod,
   // },
-  // {
-  //   name: "Manoj",
-  //   surName: "Samantha",
-  //   designation: "UI/UX Designer",
-  //   img: tod,
-  // },
+  {
+    name: "Manoj",
+    surName: "Samantha",
+    designation: "UI/UX Designer",
+    img: manoj,
+  },
   {
     name: "Diya",
     surName: "Sirohi",

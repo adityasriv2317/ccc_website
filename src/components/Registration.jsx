@@ -11,7 +11,10 @@ import axios from "axios";
 import trapezium from "../assets/trapezium.png";
 import button from "../assets/button.png";
 import triangle from "../assets/triangle.svg";
-import bgg from "../assets/bgg.svg";
+import bg from "../assets/bgg.svg";
+import bgg from "../assets/form.png";
+import logo from '../assets/name.png'
+import ramp from "../assets/ramp.png";
 import Loading from "./Loading";
 
 const Registration = () => {
@@ -212,7 +215,10 @@ const Registration = () => {
         <img src={trapezium} className="mx:w-[7vw]" alt="" />
       </div>
 
-      <div className="relative h-full py-5">
+      <img src={logo} className="absolute md:w-[8vw] mx:w-[12vw] left-5 top-5 z-0" alt="" />
+      <img src={ramp} className="absolute w-1/3 right-0 bottom-0 z-0" alt="" />
+
+      <div className="relative h-full md:py-5 mx:pt-11 mx:pb-2">
         <div className="flex flex-col mx:mt-10 w-fit px-2 py-1 rounded-lg mx-auto [text-shadow:0_0_10px_black] bg-black bg-opacity-70 mb-4 text-center">
           <span className="text-3xl">
             Excited for{" "}
@@ -246,7 +252,7 @@ const Registration = () => {
               type="text"
               value={team_name}
               onChange={(e) => setteamName(e.target.value)}
-              className="text-sm z-50  sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-black rounded-lg "
+              className="text-sm z-50  sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-[rgb(51,118,188)] placeholder:bg-transparent rounded-lg "
               placeholder="Enter Team name"
             />
           </div>
@@ -254,7 +260,7 @@ const Registration = () => {
             <select
               value={domain_name}
               onChange={(e) => setDomain(e.target.value)}
-              className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-black rounded-lg"
+              className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-[rgb(51,118,188)] placeholder:bg-transparent rounded-lg"
             >
               <option value="">select Domain</option>
               <option value="Web Development">Web Development</option>
@@ -270,7 +276,7 @@ const Registration = () => {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-black rounded-lg"
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-[rgb(51,118,188)] placeholder:bg-transparent rounded-lg"
                   placeholder="Enter name"
                 />
                 <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
@@ -284,7 +290,7 @@ const Registration = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 rounded-lg bg-black"
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 rounded-lg bg-[rgb(51,118,188)] placeholder:bg-transparent"
                   placeholder={`Enter email`}
                 />
                 <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
@@ -299,7 +305,7 @@ const Registration = () => {
                     type="text"
                     value={student_no}
                     onChange={(e) => setStudentNumber(e.target.value)}
-                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 rounded-lg bg-black"
+                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 rounded-lg bg-[rgb(51,118,188)] placeholder:bg-transparent"
                     placeholder="Student no."
                   />
                   <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
@@ -311,7 +317,7 @@ const Registration = () => {
                     type="text"
                     value={mobile}
                     onChange={(e) => setContact(e.target.value)}
-                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 rounded-lg bg-black"
+                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 rounded-lg bg-[rgb(51,118,188)] placeholder:bg-transparent"
                     placeholder="Contact no."
                   />
                   <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
@@ -326,7 +332,7 @@ const Registration = () => {
                   <select
                     value={gender}
                     onChange={(e) => setGender(e.target.value)}
-                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-black rounded-lg"
+                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-[rgb(51,118,188)] placeholder:bg-transparent rounded-lg"
                   >
                     <option value=""> Gender</option>
                     <option value="Male">Male</option>
@@ -338,7 +344,7 @@ const Registration = () => {
                   <select
                     value={branch}
                     onChange={(e) => setBranch(e.target.value)}
-                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4  sm:py-3  bg-black rounded-lg"
+                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4  sm:py-3  bg-[rgb(51,118,188)] placeholder:bg-transparent rounded-lg"
                   >
                     <option value="">Branch</option>
                     <option value="CSE(core)">CSE</option>
@@ -363,7 +369,7 @@ const Registration = () => {
                   type="text"
                   value={unstop}
                   onChange={(e) => setUnstop(e.target.value)}
-                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 rounded-lg bg-black"
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 rounded-lg bg-[rgb(51,118,188)] placeholder:bg-transparent"
                   placeholder="Enter unstop Id"
                 />
                 <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
@@ -382,7 +388,7 @@ const Registration = () => {
                 <select
                   value={residence}
                   onChange={(e) => setResidence(e.target.value)}
-                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-black rounded-lg appearance-none"
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-[rgb(51,118,188)] placeholder:bg-transparent rounded-lg appearance-none"
                 >
                   <option value="">select residence</option>
                   <option value="Hosteller">Hosteller</option>
@@ -421,7 +427,7 @@ const Registration = () => {
                   type="text"
                   value={Name2}
                   onChange={(e) => setName2(e.target.value)}
-                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 bg-black rounded-lg"
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 bg-[rgb(51,118,188)] placeholder:bg-transparent rounded-lg"
                   placeholder="Enter name"
                 />
                 <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
@@ -435,7 +441,7 @@ const Registration = () => {
                   type="email"
                   value={Email2}
                   onChange={(e) => setEmail2(e.target.value)}
-                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 rounded-lg bg-black"
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 rounded-lg bg-[rgb(51,118,188)] placeholder:bg-transparent"
                   placeholder={`Enter email`}
                 />
                 <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
@@ -450,7 +456,7 @@ const Registration = () => {
                     type="text"
                     value={StudentNumber2}
                     onChange={(e) => setStudentNumber2(e.target.value)}
-                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 rounded-lg  bg-black"
+                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 rounded-lg bg-[rgb(51,118,188)] placeholder:bg-transparent"
                     placeholder=" Student no."
                   />
                   <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
@@ -462,7 +468,7 @@ const Registration = () => {
                     type="text"
                     value={Contact2}
                     onChange={(e) => setContact2(e.target.value)}
-                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 rounded-lg bg-black"
+                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 rounded-lg bg-[rgb(51,118,188)] placeholder:bg-transparent"
                     placeholder="Contact no."
                   />
                   <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
@@ -476,7 +482,7 @@ const Registration = () => {
                   <select
                     value={gender2}
                     onChange={(e) => setgender2(e.target.value)}
-                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 bg-black rounded-lg"
+                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 bg-[rgb(51,118,188)] placeholder:bg-transparent rounded-lg"
                   >
                     <option value="" disabled>
                       Gender
@@ -489,7 +495,7 @@ const Registration = () => {
                   <select
                     value={Branch2}
                     onChange={(e) => setBranch2(e.target.value)}
-                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 bg-black rounded-lg"
+                    className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 bg-[rgb(51,118,188)] placeholder:bg-transparent rounded-lg"
                   >
                     <option value="">Branch</option>
                     <option value="CSE(core)">CSE</option>
@@ -511,7 +517,7 @@ const Registration = () => {
                   type="text"
                   value={unstop2}
                   onChange={(e) => setunstop2(e.target.value)}
-                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 rounded-lg bg-black"
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 rounded-lg bg-[rgb(51,118,188)] placeholder:bg-transparent"
                   placeholder="Enter unstop"
                 />
                 <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
@@ -530,7 +536,7 @@ const Registration = () => {
                 <select
                   value={Residence2}
                   onChange={(e) => setResidence2(e.target.value)}
-                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-black rounded-lg appearance-none"
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-[rgb(51,118,188)] placeholder:bg-transparent rounded-lg appearance-none"
                 >
                   <option value="">select residence</option>
                   <option value="Hosteller">Hosteller</option>
