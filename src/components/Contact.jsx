@@ -4,7 +4,7 @@ import invert from "../assets/invert.png";
 
 const Contact = () => {
   return (
-    <>
+    <div id="contact" >
       
       <div className="flex justify-center items-center bg-gray-1000">
         <div className="text-white flex justify-center items-center bg-teal-500 flex-col w-11/12 md:w-8/12 lg:w-6/12 xl:w-4/12 h-auto py-5 rounded-md m-10" >
@@ -54,7 +54,7 @@ const Contact = () => {
       <div>
         <img src={invert} className="w-screen h-72" alt="" />
       </div>
-    </>
+    </div>
   );
 };
 

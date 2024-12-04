@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { FaUserPlus, FaUser, FaHome, FaCodeBranch } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
@@ -39,7 +38,6 @@ const Registration = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState("");
   const [next, setNext] = useState(false);
-
 
   const handleRecaptchaChange = (token) => {
     const trimmedToken = token.trim();
@@ -91,9 +89,7 @@ const Registration = () => {
         console.log(response.data);
         console.log(recaptchaToken);
         toast.success("Registration Successful");
-       
-      } 
-      catch (error) {
+      } catch (error) {
         let errorMessage = "Something went wrong!";
         if (error.response) {
           errorMessage = error.response.data?.message || "Server error!";
@@ -105,8 +101,7 @@ const Registration = () => {
         }
         toast.error(errorMessage);
         setError(errorMessage);
-      } 
-      finally {
+      } finally {
         setIsLoading(false);
       }
     }
@@ -144,7 +139,7 @@ const Registration = () => {
       return false;
     }
 
-    if (!(student_no.startsWith("23"))) {
+    if (!student_no.startsWith("23")) {
       toast.error("Student number should start with  23");
       return false;
     }
@@ -177,7 +172,7 @@ const Registration = () => {
       return false;
     }
 
-    if (!(StudentNumber2.startsWith("23"))) {
+    if (!StudentNumber2.startsWith("23")) {
       toast.error("Student number should start with 23");
       return false;
     }
@@ -208,20 +203,15 @@ const Registration = () => {
 
   return (
     <div
-  className="h-screen w-screen pb-2 relative bg-cover"
-  style={{ backgroundImage: `url(${bgg})`, backgroundRepeat: 'no-repeat' }}
->
-
+      className="h-screen w-screen pb-2 relative bg-cover"
+      style={{ backgroundImage: `url(${bgg})`, backgroundRepeat: "no-repeat" }}
+    >
       <ToastContainer />
-      <div className="blocks flex w-full justify-between absolute  mt-40 "
-                >
+      <div className="blocks flex w-full justify-between absolute">
         <img src={trapezium} className="rotate-180 mx:w-[7vw]" alt="" />
         <img src={trapezium} className="mx:w-[7vw]" alt="" />
       </div>
-      <div className="backdrop-blur-xl relative top-10 max-[800px]:top-0 max-w-sm sm:max-w-xl mx-auto px-4 sm:px-20 pt-6  h-auto rounded-2xl m-10">
-      {/* <div className="bg-gray-800 mt-10 max-w-sm sm:max-w-xl mx-auto px-40 sm:px-10 py-6 h-auto rounded-2xl m-14 md:max-w-3xl"> */}
-
-
+      <div className="backdrop-blur-xl relative top-20 max-[800px]:top-0 max-w-sm sm:max-w-xl mx-auto my-auto px-4 sm:px-20 pt-6 h-auto rounded-2xl m-10">
         <div className="text-center ">
           <h1 className="text-3xl sm:text-3xl text-violet-600 font-bold">
             REGISTER HERE
@@ -251,19 +241,18 @@ const Registration = () => {
           />
         </div>
         <div className="mt-2">
-           <select
-                 value={domain_name}
-                 onChange={(e) => setDomain(e.target.value)}
-                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-black rounded-lg"
-              >
-                <option value="">select Domain</option>
-                <option value="Web Development">Web Development</option>
-                <option value="App Developmen">App Development</option>
-              </select>
+          <select
+            value={domain_name}
+            onChange={(e) => setDomain(e.target.value)}
+            className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-black rounded-lg"
+          >
+            <option value="">select Domain</option>
+            <option value="Web Development">Web Development</option>
+            <option value="App Developmen">App Development</option>
+          </select>
         </div>
-        
+
         <form onSubmit={handleSubmit} className="space-y-6 ">
-      
           {/* member 1 */}
           <div className={`${next == false ? "block" : "hidden"}`}>
             <div className="flex items-center rounded-lg mt-2 relative h-full">
@@ -293,73 +282,71 @@ const Registration = () => {
                 <MdEmail />
               </div>
             </div>
-            
+
             <div className="md:flex block gap-2 ">
-            <div className="flex items-center rounded-lg mt-2 relative h-full">
-              <input
-                type="text"
-                value={student_no}
-                onChange={(e) => setStudentNumber(e.target.value)}
-                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 rounded-lg bg-black"
-                placeholder="Student no."
-              />
-              <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
-                <PiStudentBold />
+              <div className="flex items-center rounded-lg mt-2 relative h-full">
+                <input
+                  type="text"
+                  value={student_no}
+                  onChange={(e) => setStudentNumber(e.target.value)}
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 rounded-lg bg-black"
+                  placeholder="Student no."
+                />
+                <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
+                  <PiStudentBold />
+                </div>
               </div>
-            </div>
-            <div className="flex items-center rounded-lg relative h-full mt-2">
-              <input
-                type="text"
-                value={mobile}
-                onChange={(e) => setContact(e.target.value)}
-                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 rounded-lg bg-black"
-                placeholder="Contact no."
-              />
-              <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
-                <IoIosContact />
+              <div className="flex items-center rounded-lg relative h-full mt-2">
+                <input
+                  type="text"
+                  value={mobile}
+                  onChange={(e) => setContact(e.target.value)}
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 rounded-lg bg-black"
+                  placeholder="Contact no."
+                />
+                <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
+                  <IoIosContact />
+                </div>
               </div>
-            </div>
             </div>
 
             <div className="flex  gap-2">
-            {/* <div className="md:flex block gap-2"> */}
-            <div className="flex items-center rounded-lg mt-2 relative h-full w-6/12">
-              <select
-                value={gender}
-                onChange={(e) => setGender(e.target.value)}
-                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-black rounded-lg"
-              >
-                <option value=""> Gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select>
-            </div>
+              {/* <div className="md:flex block gap-2"> */}
+              <div className="flex items-center rounded-lg mt-2 relative h-full w-6/12">
+                <select
+                  value={gender}
+                  onChange={(e) => setGender(e.target.value)}
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-black rounded-lg"
+                >
+                  <option value=""> Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
 
-            <div className="flex items-center rounded-lg mt-2 relative h-full w-6/12">
-               <select
-                 value={branch}
-                 onChange={(e) => setBranch(e.target.value)}
-              className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4  sm:py-3  bg-black rounded-lg"
-            >
-              <option value="">
-                Branch
-              </option>
-              <option value="CSE(core)">CSE</option>
-              <option value="CSE(AIML)">CSE(AIML)</option>
-              <option value="CSE(DS)">CSE(DS)</option>
-              <option value="CSE">CSE(Hindi)</option>
-              <option value="CS">CS</option>
-              <option value="IT">IT</option>
-              <option value="CSIT">CSIT</option>
-              <option value="AIML">AIML</option>
-              <option value="ECE/EN">ECE/EN</option>
-              <option value="ME">ME</option>
-              <option value="CE">CE</option>
-            </select>
-              {/* <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
+              <div className="flex items-center rounded-lg mt-2 relative h-full w-6/12">
+                <select
+                  value={branch}
+                  onChange={(e) => setBranch(e.target.value)}
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4  sm:py-3  bg-black rounded-lg"
+                >
+                  <option value="">Branch</option>
+                  <option value="CSE(core)">CSE</option>
+                  <option value="CSE(AIML)">CSE(AIML)</option>
+                  <option value="CSE(DS)">CSE(DS)</option>
+                  <option value="CSE">CSE(Hindi)</option>
+                  <option value="CS">CS</option>
+                  <option value="IT">IT</option>
+                  <option value="CSIT">CSIT</option>
+                  <option value="AIML">AIML</option>
+                  <option value="ECE/EN">ECE/EN</option>
+                  <option value="ME">ME</option>
+                  <option value="CE">CE</option>
+                </select>
+                {/* <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
                 <FaCodeBranch />
               </div> */}
-            </div>
+              </div>
             </div>
             <div className="flex items-center rounded-lg mt-2 relative h-full">
               <input
@@ -373,8 +360,6 @@ const Registration = () => {
                 {/* <span className="text-red-700 text-3xl">*</span> */}
                 <FaUserPlus />
               </div>
-            
-
             </div>
             <div className="flex items-center rounded-lg mt-2 relative h-full">
               {/* <input
@@ -406,21 +391,22 @@ const Registration = () => {
                 Next
               </div>
             </div> */}
-           
-            <div onClick={handleNext} className="relative mx-auto left-32  z-2 text-center font-albert font-semibold text-xl md:text-2xl shadow-sm text-black py-5 px-8 bg-no-repeat bg-center bg-contain w-fit transform hover:scale-105 transition-all ease-in-out delay-0 duration-3000 cursor-pointer z-50"
-          style={{
-            backgroundImage: `url(${button})`,
-          }}
-        >
-         <p className="p-2 z-50"> Next</p>
-        </div>
-      </div>
 
+            <div
+              onClick={handleNext}
+              className="relative mx-auto left-32  z-2 text-center font-albert font-semibold text-xl md:text-2xl shadow-sm text-black py-5 px-8 bg-no-repeat bg-center bg-contain w-fit transform hover:scale-105 transition-all ease-in-out delay-0 duration-3000 cursor-pointer z-50"
+              style={{
+                backgroundImage: `url(${button})`,
+              }}
+            >
+              <p className="p-2 z-50"> Next</p>
+            </div>
+          </div>
 
           {/* meneber2 */}
           <div className={`${next ? "block" : "hidden"} `}>
             <div className="flex items-center rounded-lg  relative h-full">
-            {/* <div className="flex items-center rounded-lg relative h-full"> */}
+              {/* <div className="flex items-center rounded-lg relative h-full"> */}
               <input
                 type="text"
                 value={Name2}
@@ -449,69 +435,66 @@ const Registration = () => {
             </div>
 
             <div className="md:flex block gap-2">
-            <div className="flex items-center rounded-lg relative h-full md:w-6/12 w-full mt-2">
-              <input
-                type="text"
-                value={StudentNumber2}
-                onChange={(e) => setStudentNumber2(e.target.value)}
-                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 rounded-lg  bg-black"
-                placeholder=" Student no."
-              />
-              <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
-                <PiStudentBold />
+              <div className="flex items-center rounded-lg relative h-full md:w-6/12 w-full mt-2">
+                <input
+                  type="text"
+                  value={StudentNumber2}
+                  onChange={(e) => setStudentNumber2(e.target.value)}
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 rounded-lg  bg-black"
+                  placeholder=" Student no."
+                />
+                <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
+                  <PiStudentBold />
+                </div>
+              </div>
+              <div className="flex items-center rounded-lg relative h-full mt-2 md:w-6/12  w-full">
+                <input
+                  type="text"
+                  value={Contact2}
+                  onChange={(e) => setContact2(e.target.value)}
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 rounded-lg bg-black"
+                  placeholder="Contact no."
+                />
+                <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
+                  <IoIosContact />
+                </div>
               </div>
             </div>
-             <div className="flex items-center rounded-lg relative h-full mt-2 md:w-6/12  w-full">
-              <input
-                type="text"
-                value={Contact2}
-                onChange={(e) => setContact2(e.target.value)}
-                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 rounded-lg bg-black"
-                placeholder="Contact no."
-              />
-              <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
-                <IoIosContact />
-              </div>
-            </div>     
-           </div>
-         
 
-             <div className="flex gap-2">
-            <div className="flex items-center rounded-lg relative h-full mt-2  w-6/12">
-              <select
-                value={gender2}
-                onChange={(e) => setgender2(e.target.value)}
-                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 bg-black rounded-lg"
-              >
-                <option value="" disabled>
-                  Gender
-                </option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select>
-            </div>
-            <div className="flex items-center rounded-lg relative h-full mt-2  w-6/12">
-             <select
-             value={Branch2}
-             onChange={(e) => setBranch2(e.target.value)}
-              className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 bg-black rounded-lg"
-            >
-              <option value="">
-                 Branch
-              </option>
-              <option value="CSE(core)">CSE</option>
-              <option value="CSE(AIML)">CSE(AIML)</option>
-              <option value="CSE(DS)">CSE(DS)</option>
-              <option value="CSE">CSE(Hindi)</option>
-              <option value="CS">CS</option>
-              <option value="IT">IT</option>
-              <option value="CSIT">CSIT</option>
-              <option value="AIML">AIML</option>
-              <option value="ECE/EN">ECE/EN</option>
-              <option value="ME">ME</option>
-              <option value="CE">CE</option>
-            </select>
-            </div>
+            <div className="flex gap-2">
+              <div className="flex items-center rounded-lg relative h-full mt-2  w-6/12">
+                <select
+                  value={gender2}
+                  onChange={(e) => setgender2(e.target.value)}
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 bg-black rounded-lg"
+                >
+                  <option value="" disabled>
+                    Gender
+                  </option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+              <div className="flex items-center rounded-lg relative h-full mt-2  w-6/12">
+                <select
+                  value={Branch2}
+                  onChange={(e) => setBranch2(e.target.value)}
+                  className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-3 sm:py-3 bg-black rounded-lg"
+                >
+                  <option value="">Branch</option>
+                  <option value="CSE(core)">CSE</option>
+                  <option value="CSE(AIML)">CSE(AIML)</option>
+                  <option value="CSE(DS)">CSE(DS)</option>
+                  <option value="CSE">CSE(Hindi)</option>
+                  <option value="CS">CS</option>
+                  <option value="IT">IT</option>
+                  <option value="CSIT">CSIT</option>
+                  <option value="AIML">AIML</option>
+                  <option value="ECE/EN">ECE/EN</option>
+                  <option value="ME">ME</option>
+                  <option value="CE">CE</option>
+                </select>
+              </div>
             </div>
             <div className="flex items-center rounded-lg relative h-full mt-2">
               <input
@@ -539,9 +522,7 @@ const Registration = () => {
                 onChange={(e) => setResidence2(e.target.value)}
                 className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-4 sm:py-3 bg-black rounded-lg appearance-none"
               >
-                <option value="">
-                  select residence
-                </option>
+                <option value="">select residence</option>
                 <option value="Hosteller">Hosteller</option>
                 <option value="DayScholar">DayScholar</option>
               </select>
@@ -549,31 +530,31 @@ const Registration = () => {
                 <FaHome />
               </div>
             </div>
-           
-             <div className="sm:flex block gap-2">
-            <div className="flex justify-center items-center mt-3 z-50">
-              <ReCAPTCHA 
-                sitekey="6Lcd2CMpAAAAAKLqwdxjTgnWwzSgAGEgtl0BVOng"
-                onChange={handleRecaptchaChange}
-              />
+
+            <div className="sm:flex block gap-2">
+              <div className="flex justify-center items-center mt-3 z-50">
+                <ReCAPTCHA
+                  sitekey="6Lcd2CMpAAAAAKLqwdxjTgnWwzSgAGEgtl0BVOng"
+                  onChange={handleRecaptchaChange}
+                />
+              </div>
+              {isLoading ? (
+                <div className="text-center">
+                  <Loading />
+                </div>
+              ) : (
+                <div
+                  className="relative mx-auto  z-2 text-center font-albert font-semibold text-[1vw] flex justify-center items-center shadow-sm text-black py-4   px-4  bg-no-repeat bg-center bg-contain w-fit transform hover:scale-105 transition-all ease-in-out delay-0 duration-3000 cursor-pointer"
+                  style={{
+                    backgroundImage: `url(${button})`,
+                  }}
+                >
+                  <button type="submit" className="p-3 text-2xl font-bolder">
+                    Submit
+                  </button>
+                </div>
+              )}
             </div>
-            {isLoading ? 
-       (<div className="text-center">
-       <Loading />
-     </div>) :
-     (
-            <div className="relative mx-auto  z-2 text-center font-albert font-semibold text-[1vw] flex justify-center items-center shadow-sm text-black py-4   px-4  bg-no-repeat bg-center bg-contain w-fit transform hover:scale-105 transition-all ease-in-out delay-0 duration-3000 cursor-pointer" style={{
-                  backgroundImage: `url(${button})`,
-                }}>
-              <button
-                type="submit"
-                className="p-3 text-2xl font-bolder"
-              >
-                Submit
-              </button>
-            </div>
-             )}
-             </div>
             {error && (
               <p className="text-sm sm:text-lg text-red-600 text-center mt-0">
                 {error}
@@ -583,9 +564,12 @@ const Registration = () => {
         </form>
       </div>
       <div className="z-0">
-      <img src={triangle} alt="img" className="w-full absolute bottom-0 -z-10 " />
+        <img
+          src={triangle}
+          alt="img"
+          className="w-full absolute bottom-0 -z-10 "
+        />
       </div>
-      
     </div>
   );
 };
