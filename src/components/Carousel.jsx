@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 // team data
-import obj from "./teamdata";
+import { obj } from "./Members";
 
 const Carousel = () => {
   const [activeSlide, setActiveSlide] = useState(0);

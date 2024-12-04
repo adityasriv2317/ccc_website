@@ -1,6 +1,6 @@
-import React from "react";
-
+import React from 'react'
 import tod from "../assets/about/tod.jpg";
+
 // imgs
 import akhand from "../assets/team/akhandSingh.jpg";
 import diya from "../assets/team/Diya.jpg";
@@ -108,4 +108,11 @@ const obj = [
   },
 ];
 
-export default obj;
+const Members = () => {
+  return (
+    <div>Members</div>
+  )
+}
+
+export default Members
+export {obj};
