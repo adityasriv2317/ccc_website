@@ -26,13 +26,11 @@ const About = () => {
         <img src={team} className="mx-auto w-1/2" alt="" />
 
         <div
-          className="relative mx-auto mt-4 z-2 text-center font-albert font-semibold text-[2vw] shadow-sm text-black py-5 px-8 bg-no-repeat bg-center bg-contain w-fit"
+          className="relative mt-0 hover:animate-pulse cursor-default mx-auto my-auto z-2 text-center items-center justify-center font-albert font-semibold text-[3vw] shadow-sm text-black py-2 px-6 bg-no-repeat bg-center bg-contain w-[30vw]"
           style={{
             backgroundImage: `url(${button})`,
           }}
-        >
-          About Us
-        </div>
+        >Explore</div>
       </div>
 
       <Carousel />
