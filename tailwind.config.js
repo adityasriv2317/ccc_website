@@ -10,7 +10,7 @@ export default {
          albert: ['Albert Sans', 'sans-serif'],
          jetbrains: ['JetBrains Mono', 'sans-serif'],
       },
-      screens: { 'mx': {'max': '640px'}, },
+      screens: { 'mx': {'max': '920px'}, },
       keyframes: {
         zoomUp: {
           '0%': { transform: 'scale(80%)'},

@@ -9,7 +9,7 @@ import logo from "../assets/CCC.png";
 
 // bar function
 const ProgressBar = ({ label }) => {
-  let segmentCount = 40;
+  let segmentCount = 30;
 
   // state
   const [animatedSegments, setAnimatedSegments] = useState([]);
@@ -36,7 +36,7 @@ const ProgressBar = ({ label }) => {
   // render bars
   return (
     <div className="mt-6 flex justify-between">
-      <div className="text-white font-jetbrains text-xl mr-6 font-semibold">
+      <div className="text-white font-jetbrains mx:text-sm text-xl mr-6 font-semibold">
         {label}
       </div>
       <div className="flex">
@@ -65,7 +65,7 @@ const Landing = () => {
       {/* hero */}
       <div className="content w-[90vw] mx-auto mt-24 md:mt-6 flex flex-col md:flex-row items-center justify-between text-center text-white">
         {/* left */}
-        <div className="left w-full md:w-1/2 flex flex-col items-center font-albert">
+        <div className="left w-full md:w-1/2 mx:mt-16 flex flex-col items-center font-albert">
           <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
             CLOUD COMPUTING CELL
           </p>
@@ -100,11 +100,11 @@ const Landing = () => {
       </div>
 
       {/* about page content */}
-      <div className="text-white mx:bg-[rgba(75,85,99,0.2)] z-20 text-left absolute left-1 md:left-20 mx:top-25 top-[65vh] mx-4 mx:px-2 mx:py-2 md:mx-0">
+      <div className="text-white mx:bg-[rgba(75,85,99,0.2)] z-20 text-left absolute left-[3vw] mx:top-25 top-[31em] mx-2 mx:px-2 mx:py-2">
         <h1 className="font-poppins mb-5 shadow-sm text-[rgb(150,198,245)] [text-shadow:0_0_5px_blue] animate-sd text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
           ABOUT US
         </h1>
-        <p className="font-jetbrains [text-shadow:0_0_5px_black] text-wrap text-justify overflow-y-auto mx:max-h-[18vh] md:max-w-[35vw] animate-sr text-sm sm:text-base md:text-lg">
+        <p className="font-jetbrains [text-shadow:0_0_5px_black] text-wrap text-justify overflow-y-auto mx:max-h-[18vh] md:max-w-[35vw] animate-sr text-[1.5vw]">
           Founded in February 2016, the Cloud Computing Cell at AKGEC empowers
           students with expertise across diverse domains like Web Development,
           Machine Learning, UI/UX Design, Backend Development, Cybersecurity,
@@ -126,7 +126,7 @@ const Landing = () => {
       </div>
 
       {/* progress barr animation */}
-      <div className="h-40 hidden md:block absolute bottom-20 right-10 p-10">
+      <div className="h-40 hidden md:block absolute md:bottom-20 right-10 md:right-14 top-[34em] mx-4 mx:px-2 mx:py-2 md:mx-0">
         <ProgressBar label="THINK" />
         <ProgressBar label="DEVELOP" />
         <ProgressBar label="DEPLOY" />
