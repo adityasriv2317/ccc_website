@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
+// import tod from "../assets/about/tod.jpg";
 
-import tod from "../assets/about/tod.jpg";
 // imgs
 import akhand from "../assets/team/akhandSingh.jpg";
 import diya from "../assets/team/Diya.jpg";
@@ -11,6 +11,7 @@ import shreeya from "../assets/team/shreeyaAggarwal.jpg";
 import sachendra from "../assets/team/sachendraGangwar.jpg";
 import prakhar from "../assets/team/prakharSrivastava.jpg";
 import kratika from "../assets/team/kratikaGupta.jpg";
+import kritika from "../assets/team/kritika.jpg";
 import harsh from "../assets/team/harshSingh.jpeg";
 import akshat from "../assets/team/akshatSingh.jpg";
 import aditya from "../assets/team/adityaKumar.jpeg";
@@ -40,12 +41,12 @@ const obj = [
     designation: "Frontend Developer",
     img: yash,
   },
-  // {
-  //   name: "Kritika",
-  //   surName: "Aggarwal",
-  //   designation: "ML Developer",
-  //   img: tod,
-  // },
+  {
+    name: "Kritika",
+    surName: "Agrawal",
+    designation: "ML Developer",
+    img: kritika,
+  },
   {
     name: "Sachendra",
     surName: "Gangwar",
@@ -67,7 +68,7 @@ const obj = [
   {
     name: "Diya",
     surName: "Sirohi",
-    designation: "ML Developer",
+    designation: "Cloud Developer",
     img: diya,
   },
   {
@@ -85,7 +86,7 @@ const obj = [
   {
     name: "Kratika",
     surName: "Gupta",
-    designation: "App Developer",
+    designation: "Backend Developer",
     img: kratika,
   },
   {
@@ -96,16 +97,23 @@ const obj = [
   },
   {
     name: "Shreeya",
-    surName: "Aggarwal",
-    designation: "Backend Developer",
+    surName: "Agrawal",
+    designation: "ML Developer",
     img: shreeya,
   },
   {
     name: "Shreya",
     surName: "Mohan",
-    designation: "Backend Developer",
+    designation: "Cloud Developer",
     img: shreya,
   },
 ];
 
-export default obj;
+const Members = () => {
+  return (
+    <div>Members</div>
+  )
+}
+
+export default Members
+export {obj};

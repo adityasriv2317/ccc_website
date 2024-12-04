@@ -1,5 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import bg from "../assets/landing.png";
 import button from "../assets/button.png";
 import wires from "../assets/wires.png";
@@ -61,7 +63,7 @@ const Landing = () => {
       }}
     >
       {/* hero */}
-      <div className="content w-[90vw] mx-auto mt-32 md:mt-6 flex flex-col md:flex-row items-center justify-between text-center text-white">
+      <div className="content w-[90vw] mx-auto mt-24 md:mt-6 flex flex-col md:flex-row items-center justify-between text-center text-white">
         {/* left */}
         <div className="left w-full md:w-1/2 flex flex-col items-center font-albert">
           <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
@@ -73,14 +75,14 @@ const Landing = () => {
             <p>DEPLOY</p>
           </div>
 
-          <div
+          <Link to="/register"
             className="font-jetbrains animate-pulse hover:animate-zoom text-base sm:text-lg md:text-xl font-semibold text-black mt-12 md:mt-16 py-4 px-8 bg-no-repeat bg-center bg-contain cursor-pointer w-fit mx-auto"
             style={{
               backgroundImage: `url(${button})`,
             }}
           >
             REGISTER HERE
-          </div>
+          </Link>
         </div>
 
         {/* right */}
@@ -102,12 +104,10 @@ const Landing = () => {
         <h1 className="font-poppins mb-5 shadow-sm text-[rgb(150,198,245)] [text-shadow:0_0_5px_blue] animate-sd text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
           ABOUT US
         </h1>
-        <p className="font-jetbrains [text-shadow:0_0_5px_black] overflow-y-auto mx:max-h-[18vh] animate-sr text-sm sm:text-base md:text-lg">
-          Founded in February 2016, the Cloud <br />
-          Computing Cell at AKGEC empowers students <br />
-          with expertise across diverse domains like <br />
-          Web Development, Machine Learning, UI/UX <br />
-          Design, Backend Development, Cybersecurity,
+        <p className="font-jetbrains [text-shadow:0_0_5px_black] text-wrap text-justify overflow-y-auto mx:max-h-[18vh] md:max-w-[35vw] animate-sr text-sm sm:text-base md:text-lg">
+          Founded in February 2016, the Cloud Computing Cell at AKGEC empowers
+          students with expertise across diverse domains like Web Development,
+          Machine Learning, UI/UX Design, Backend Development, Cybersecurity,
           <br />
           and Cloud Technologies.
         </p>
