@@ -1,5 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import bg from "../assets/landing.png";
 import button from "../assets/button.png";
 import wires from "../assets/wires.png";
@@ -73,14 +75,14 @@ const Landing = () => {
             <p>DEPLOY</p>
           </div>
 
-          <div
+          <Link to="/register"
             className="font-jetbrains animate-pulse hover:animate-zoom text-base sm:text-lg md:text-xl font-semibold text-black mt-12 md:mt-16 py-4 px-8 bg-no-repeat bg-center bg-contain cursor-pointer w-fit mx-auto"
             style={{
               backgroundImage: `url(${button})`,
             }}
           >
             REGISTER HERE
-          </div>
+          </Link>
         </div>
 
         {/* right */}
