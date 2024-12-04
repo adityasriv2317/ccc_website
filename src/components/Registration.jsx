@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaUserPlus, FaUser, FaHome, FaCodeBranch } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { PiStudentBold } from "react-icons/pi";
@@ -215,14 +216,14 @@ const Registration = () => {
         <img src={trapezium} className="mx:w-[7vw]" alt="" />
       </div>
 
-      <img src={logo} className="absolute md:w-[8vw] mx:w-[12vw] left-5 top-5 z-0" alt="" />
+      <Link to='/' className='cursor-pointer z-50'> <img src={logo} className="absolute md:w-[8vw] mx:w-[12vw] left-5 top-5 z-50" alt="" /> </Link>
       <img src={ramp} className="absolute w-1/3 right-0 bottom-0 z-0" alt="" />
 
       <div className="relative h-full md:py-5 mx:pt-11 mx:pb-2">
         <div className="flex flex-col mx:mt-10 w-fit px-2 py-1 rounded-lg mx-auto [text-shadow:0_0_10px_black] bg-black bg-opacity-70 mb-4 text-center">
           <span className="text-3xl">
             Excited for{" "}
-            <span className="text-[rgb(150,198,245)]">DEV CLASH</span> !!
+            <span className="text-[rgb(150,198,245)]">DEVCLASH</span> !!
           </span>
           <span>CODE THE FRAME TO WIN EXCITING REWARDS</span>
         </div>

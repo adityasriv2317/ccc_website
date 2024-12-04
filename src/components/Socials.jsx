@@ -1,11 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFacebook,
-  faTwitter,
   faInstagram,
   faLinkedin,
-  faYoutube,
+  faGoogle,
 } from "@fortawesome/free-brands-svg-icons";
 
 import './style.css'
@@ -32,77 +30,15 @@ const Socials = () => {
       </a>
 
       <a
-        href="https://youtube.com"
+        href="https://mail.google.com"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="YouTube"
+        aria-label="E-Mail"
       >
-        <FontAwesomeIcon icon={faYoutube}/>
+        <FontAwesomeIcon icon={faGoogle}/>
       </a>
     </div>
   );
 };
 
 export default Socials;
-
-{
-  /* <a
-        href="https://facebook.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Facebook"
-      >
-        <FontAwesomeIcon
-          icon={faFacebook}
-          size="2x"
-          className="text-blue-600"
-        />
-      </a>
-
-      <a
-        href="https://twitter.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Twitter"
-      >
-        <FontAwesomeIcon icon={faTwitter} size="2x" className="text-blue-400" />
-      </a>
-      <a
-        href="https://instagram.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram"
-      >
-        <FontAwesomeIcon
-          icon={faInstagram}
-          size="2x"
-          className="text-pink-500"
-        />
-      </a>
-
-      <a
-        href="https://linkedin.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-      >
-        <FontAwesomeIcon
-          icon={faLinkedin}
-          size="2x"
-          className="text-blue-700"
-        />
-      </a>
-
-      <a
-        href="https://youtube.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="YouTube"
-      >
-        <FontAwesomeIcon
-          icon={faYoutube}
-          size="2x"
-          className="text-red-600" //
-        />
-      </a> */
-}
