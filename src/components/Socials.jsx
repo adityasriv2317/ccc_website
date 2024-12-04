@@ -14,23 +14,6 @@ const Socials = () => {
   return (
     <div className="socials hidden md:flex text-[rgb(150,198,245)] justify-center items-center space-x-6">
       <a
-        href="https://facebook.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Facebook"
-      >
-        <FontAwesomeIcon icon={faFacebook} />
-      </a>
-
-      <a
-        href="https://twitter.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Twitter"
-      >
-        <FontAwesomeIcon icon={faTwitter} />
-      </a>
-      <a
         href="https://instagram.com"
         target="_blank"
         rel="noopener noreferrer"
