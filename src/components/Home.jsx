@@ -1,20 +1,39 @@
-import React from 'react'
-import Landing from './Landing'
-import About from './About'
-import Mentor from './Mentor'
-import Contact from './Contact'
-import Header from './Header'
+import React from "react";
+import { useState, useEffect } from "react";
+
+import Landing from "./Landing";
+import About from "./About";
+import Mentor from "./Mentor";
+import Contact from "./Contact";
+import Header from "./Header";
+import Splash from "../splash/Splash";
 
 const Home = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div>
-        <Header />
-        <Landing />
-        <About />
-        <Mentor />
-        <Contact />
+      {!isLoaded ? (
+        <Splash />
+      ) : (
+        <>
+          <Header />
+          <Landing />
+          <About />
+          <Mentor />
+          <Contact />
+        </>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
