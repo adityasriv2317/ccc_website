@@ -11,10 +11,10 @@ const Splash = () => {
           <img src={logo} alt="CCC" />
       </div>
 
-      <div className="txt flex justify-center items-center space-x-8 mt-14">
-        <span className="text-4xl font-jetbrains text-white">THINK</span>
-        <span className="text-4xl font-jetbrains text-white">DEVELOP</span>
-        <span className="text-4xl font-jetbrains text-white">DEPLOY</span>
+      <div className="txt text-4xl mx:text-lg flex justify-center items-center space-x-8 mt-14">
+        <span className="font-jetbrains text-white">THINK</span>
+        <span className="font-jetbrains text-white">DEVELOP</span>
+        <span className="font-jetbrains text-white">DEPLOY</span>
       </div>
     </div>
   );
