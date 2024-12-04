@@ -11,6 +11,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 import trapezium from "../assets/trapezium.png";
 import button from "../assets/button.png";
+import triangle from "../assets/triangle.svg";
+import bgg from "../assets/bgg.svg";
 import Loading from "./Loading";
 
 const Registration = () => {
@@ -32,12 +34,12 @@ const Registration = () => {
   const [unstop2, setunstop2] = useState("");
   const [Residence2, setResidence2] = useState("");
   const [team_name, setteamName] = useState("");
+  const [domain_name, setDomain] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [recaptchaToken, setRecaptchaToken] = useState("");
   const [next, setNext] = useState(false);
 
-  const [back, setback] = useState(false);
 
   const handleRecaptchaChange = (token) => {
     const trimmedToken = token.trim();
@@ -51,6 +53,7 @@ const Registration = () => {
     if (valid2()) {
       const formData = {
         team_name,
+        domain_name,
         participants: [
           {
             name,
@@ -83,11 +86,12 @@ const Registration = () => {
           "https://form-event.onrender.com/register",
           formData
         );
+        clearField();
         console.log("res", response);
         console.log(response.data);
         console.log(recaptchaToken);
         toast.success("Registration Successful");
-        clearField();
+       
       } 
       catch (error) {
         let errorMessage = "Something went wrong!";
@@ -117,6 +121,7 @@ const Registration = () => {
   const valid = () => {
     if (
       team_name === "" ||
+      domain_name === "" ||
       name === "" ||
       email === "" ||
       student_no === "" ||
@@ -139,8 +144,8 @@ const Registration = () => {
       return false;
     }
 
-    if (!(student_no.startsWith("22") || student_no.startsWith("23"))) {
-      toast.error("Student number should start with 22 or 23");
+    if (!(student_no.startsWith("23"))) {
+      toast.error("Student number should start with  23");
       return false;
     }
 
@@ -172,8 +177,8 @@ const Registration = () => {
       return false;
     }
 
-    if (!(StudentNumber2.startsWith("22") || StudentNumber2.startsWith("23"))) {
-      toast.error("Student number should start with 22 or 23");
+    if (!(StudentNumber2.startsWith("23"))) {
+      toast.error("Student number should start with 23");
       return false;
     }
     return true;
@@ -196,19 +201,24 @@ const Registration = () => {
       Branch2 === "",
       unstop2 === "",
       Residence2 === "",
+      team_name === "",
       Contact2 === "";
     setNext(false);
   };
 
   return (
-    <>
-      <ToastContainer />
+    <div
+  className="h-screen w-screen pb-2 relative bg-cover"
+  style={{ backgroundImage: `url(${bgg})`, backgroundRepeat: 'no-repeat' }}
+>
 
-      <div className="blocks flex w-full justify-between absolute  mt-40 -z-20">
+      <ToastContainer />
+      <div className="blocks flex w-full justify-between absolute  mt-40 "
+                >
         <img src={trapezium} className="rotate-180 mx:w-[7vw]" alt="" />
         <img src={trapezium} className="mx:w-[7vw]" alt="" />
       </div>
-      <div className=" bg-gray-800 mt-10 max-w-sm sm:max-w-xl mx-auto px-4 sm:px-20 pt-6  h-auto rounded-2xl m-14">
+      <div className="backdrop-blur-xl mt-10 max-w-sm sm:max-w-xl mx-auto px-4 sm:px-20 pt-6  h-auto rounded-2xl m-14">
       {/* <div className="bg-gray-800 mt-10 max-w-sm sm:max-w-xl mx-auto px-40 sm:px-10 py-6 h-auto rounded-2xl m-14 md:max-w-3xl"> */}
 
 
@@ -218,31 +228,43 @@ const Registration = () => {
           </h1>
           {next == false ? (
             <p
-              className={`text-sm sm:text-base text-white mt-1 mb-6 font-semibold`}
+              className={`text-sm sm:text-base text-white mt-1 mb-3 font-semibold`}
             >
               MEMBER 1
             </p>
           ) : (
             <p
-              className={`text-sm sm:text-base text-white mt-1 mb-6 font-semibold`}
+              className={`text-sm sm:text-base text-white mt-1 mb-3 font-semibold`}
             >
               MEMBER 2
             </p>
           )}
         </div>
-        
-        <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
+
+        <div className="">
           <input
             type="text"
             value={team_name}
             onChange={(e) => setteamName(e.target.value)}
-            className="text-sm z-50 mb-[-50] sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 bg-black rounded-lg"
+            className="text-sm z-50  sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 bg-black rounded-lg"
             placeholder="Enter Team name"
           />
         </div>
+        <div className="mt-2">
+           <select
+                 value={domain_name}
+                 onChange={(e) => setDomain(e.target.value)}
+                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 bg-black rounded-lg"
+              >
+                <option value="">select Domain</option>
+                <option value="Web Development">Web Development</option>
+                <option value="App Developmen">App Development</option>
+              </select>
+        </div>
+        
+        <form onSubmit={handleSubmit} className="space-y-6">
+      
           {/* member 1 */}
-          <div></div>
           <div className={`${next == false ? "block" : "hidden"}`}>
             <div className="flex items-center rounded-lg mt-2 relative h-full">
               <input
@@ -272,13 +294,15 @@ const Registration = () => {
                 <MdEmail />
               </div>
             </div>
+            
+            <div className="md:flex block gap-2 ">
             <div className="flex items-center rounded-lg mt-2 relative h-full">
               <input
                 type="text"
                 value={student_no}
                 onChange={(e) => setStudentNumber(e.target.value)}
                 className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 rounded-lg bg-black"
-                placeholder="Enter student number"
+                placeholder="Student no."
               />
               <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
                 <PiStudentBold />
@@ -290,45 +314,52 @@ const Registration = () => {
                 value={mobile}
                 onChange={(e) => setContact(e.target.value)}
                 className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 rounded-lg bg-black"
-                placeholder="Enter contact"
+                placeholder="Conatct no."
               />
               <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
                 <IoIosContact />
               </div>
             </div>
-            <div className="flex items-center rounded-lg mt-2 relative h-full">
-              {/* <input
-              type="text"
-              value={gender}
-              onChange={(e) => setGender(e.target.value)}
-              className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 rounded-lg bg-black"
-              placeholder="Enter gender"
-            /> */}
+            </div>
+
+            <div className="flex gap-2">
+            <div className="flex items-center rounded-lg mt-2 relative h-full w-6/12">
               <select
                 value={gender}
                 onChange={(e) => setGender(e.target.value)}
-                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 bg-black rounded-lg appearance-none"
+                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 bg-black rounded-lg"
               >
-                <option value="">select Gender</option>
+                <option value=""> Gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
               </select>
-              <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
-                <span className="text-red-700 text-3xl">*</span>
-                <SlCalender />
-              </div>
             </div>
-            <div className="flex items-center rounded-lg mt-2 relative h-full">
-              <input
-                type="text"
-                value={branch}
-                onChange={(e) => setBranch(e.target.value)}
-                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 rounded-lg bg-black"
-                placeholder="Enter branch"
-              />
-              <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
+
+            <div className="flex items-center rounded-lg mt-2 relative h-full w-6/12">
+               <select
+                 value={branch}
+                 onChange={(e) => setBranch(e.target.value)}
+              className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 bg-black rounded-lg"
+            >
+              <option value="">
+                Branch
+              </option>
+              <option value="CSE(core)">CSE</option>
+              <option value="CSE(AIML)">CSE(AIML)</option>
+              <option value="CSE(DS)">CSE(DS)</option>
+              <option value="CSE">CSE(Hindi)</option>
+              <option value="CS">CS</option>
+              <option value="IT">IT</option>
+              <option value="CSIT">CSIT</option>
+              <option value="AIML">AIML</option>
+              <option value="ECE">ECE</option>
+              <option value="Mechanical">Mechanical</option>
+              <option value="Civil">Civil</option>
+            </select>
+              {/* <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
                 <FaCodeBranch />
-              </div>
+              </div> */}
+            </div>
             </div>
             <div className="flex items-center rounded-lg mt-2 relative h-full">
               <input
@@ -336,12 +367,14 @@ const Registration = () => {
                 value={unstop}
                 onChange={(e) => setUnstop(e.target.value)}
                 className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 rounded-lg bg-black"
-                placeholder="Enter unstop"
+                placeholder="Enter unstop Id"
               />
               <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
                 <span className="text-red-700 text-3xl">*</span>
                 <FaUserPlus />
               </div>
+            
+
             </div>
             <div className="flex items-center rounded-lg mt-2 relative h-full">
               {/* <input
@@ -357,8 +390,8 @@ const Registration = () => {
                 className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 bg-black rounded-lg appearance-none"
               >
                 <option value="">select residence</option>
-                <option value="Hosteler">Hosteler</option>
-                <option value="Day Scholar">Day Scholar</option>
+                <option value="Hosteller">Hosteller</option>
+                <option value="DayScholar">DayScholar</option>
               </select>
               <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
                 <FaHome />
@@ -374,20 +407,19 @@ const Registration = () => {
               </div>
             </div> */}
            
-            <div onClick={handleNext} className="relative mx-auto  z-2 text-center font-albert font-semibold text-[2vw] shadow-sm text-black py-5 px-8 bg-no-repeat bg-center bg-contain w-fit transform hover:scale-105 transition-all ease-in-out delay-0 duration-3000 cursor-pointer"
+            <div onClick={handleNext} className="relative mx-auto left-32  z-2 text-center font-albert font-semibold text-[2vw] shadow-sm text-black py-5 px-8 bg-no-repeat bg-center bg-contain w-fit transform hover:scale-105 transition-all ease-in-out delay-0 duration-3000 cursor-pointer"
           style={{
             backgroundImage: `url(${button})`,
           }}
         >
-         <p className="p-3"> Next</p>
+         <p className="p-2"> Next</p>
         </div>
       </div>
-          {/* </div> */}
+
 
           {/* meneber2 */}
-          <div className={`${next ? "block" : "hidden"}`}>
-            {/* <button onClick={() => setback(true)}>Back</button> */}
-            <div className="flex items-center rounded-lg relative h-full mt-2">
+          <div className={`${next ? "block" : "hidden"} mt-0`}>
+            <div className="flex items-center rounded-lg relative h-full mt-0">
               <input
                 type="text"
                 value={Name2}
@@ -414,73 +446,71 @@ const Registration = () => {
                 <MdEmail />
               </div>
             </div>
-            <div className="flex items-center rounded-lg relative h-full mt-2">
+
+            <div className="md:flex block gap-2">
+            <div className="flex items-center rounded-lg relative h-full w-6/12 mt-2">
               <input
                 type="text"
                 value={StudentNumber2}
                 onChange={(e) => setStudentNumber2(e.target.value)}
                 className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 rounded-lg bg-black"
-                placeholder="Enter student number"
+                placeholder=" Student no."
               />
               <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
                 <PiStudentBold />
               </div>
             </div>
-            <div className="flex items-center rounded-lg relative h-full mt-2">
-              {/* <input
-              type="text"
-              value={gender2}
-              onChange={(e) => setgender2(e.target.value)}
-              className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 rounded-lg bg-black"
-              placeholder="Enter gender"
-            /> */}
+             <div className="flex items-center rounded-lg relative h-full mt-2 w-6/12">
+              <input
+                type="text"
+                value={Contact2}
+                onChange={(e) => setContact2(e.target.value)}
+                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 rounded-lg bg-black"
+                placeholder="Contact no."
+              />
+              <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
+                <IoIosContact />
+              </div>
+            </div>     
+           </div>
+         
+
+             <div className="md:flex block gap-2">
+            <div className="flex items-center rounded-lg relative h-full mt-2 w-6/12">
               <select
                 value={gender2}
                 onChange={(e) => setgender2(e.target.value)}
-                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 bg-black rounded-lg appearance-none"
+                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 bg-black rounded-lg"
               >
                 <option value="" disabled>
-                  select Gender
+                  Gender
                 </option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
               </select>
-              <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
-                <span className="text-red-700 text-3xl">*</span>
-                <SlCalender />
-              </div>
             </div>
-            <div className="flex items-center rounded-lg relative h-full mt-2">
-              <input
-                type="text"
-                value={Branch2}
-                onChange={(e) => setBranch2(e.target.value)}
-                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 rounded-lg bg-black"
-                placeholder="Enter branch"
-              />
-              {/* <select
+            <div className="flex items-center rounded-lg relative h-full mt-2 w-6/12">
+             <select
              value={Branch2}
              onChange={(e) => setBranch2(e.target.value)}
-              className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 bg-black rounded-lg appearance-none"
+              className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 bg-black rounded-lg"
             >
               <option value="">
-                select Branch
+                 Branch
               </option>
               <option value="CSE(core)">CSE</option>
               <option value="CSE(AIML)">CSE(AIML)</option>
-              <option value="">CSE(DS)</option>
-              <option value="">CSE(Hindi)</option>
-              <option value="">CS</option>
-              <option value="">IT</option>
-              <option value="">CSIT</option>
-              <option value="">AIML</option>
-              <option value="">ECE</option>
-              <option value="">Mechanical</option>
-              <option value="">Civil</option>
-            </select> */}
-              <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
-                <FaCodeBranch />
-              </div>
+              <option value="CSE(DS)">CSE(DS)</option>
+              <option value="CSE">CSE(Hindi)</option>
+              <option value="CS">CS</option>
+              <option value="IT">IT</option>
+              <option value="CSIT">CSIT</option>
+              <option value="AIML">AIML</option>
+              <option value="ECE">ECE</option>
+              <option value="Mechanical">Mechanical</option>
+              <option value="Civil">Civil</option>
+            </select>
+            </div>
             </div>
             <div className="flex items-center rounded-lg relative h-full mt-2">
               <input
@@ -490,10 +520,6 @@ const Registration = () => {
                 className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 rounded-lg bg-black"
                 placeholder="Enter unstop"
               />
-              {/* <select name="" id="">
-              <option value="">Day Scholar</option>
-              <option value="">Hosteler</option>
-            </select> */}
               <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
                 <span className="text-red-700 text-3xl">*</span>
                 <FaUserPlus />
@@ -515,30 +541,18 @@ const Registration = () => {
                 <option value="" disabled>
                   select residence
                 </option>
-                <option value="Hosteler">Hosteler</option>
-                <option value="Day Scholar">Day Scholar</option>
+                <option value="Hosteller">Hosteller</option>
+                <option value="DayScholar">DayScholar</option>
               </select>
               <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
                 <FaHome />
               </div>
             </div>
-            <div className="flex items-center rounded-lg relative h-full mt-2">
-              <input
-                type="text"
-                value={Contact2}
-                onChange={(e) => setContact2(e.target.value)}
-                className="text-sm sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 rounded-lg bg-black"
-                placeholder="Enter contact"
-              />
-              <div className="icon absolute right-3 text-lg sm:text-2xl flex items-center text-white">
-                <IoIosContact />
-              </div>
-            </div>
-
+           
+             <div className="md:flex block gap-2">
             <div className="flex justify-center items-center mt-2">
-              <ReCAPTCHA
+              <ReCAPTCHA 
                 sitekey="6Lcd2CMpAAAAAKLqwdxjTgnWwzSgAGEgtl0BVOng"
-                // onChange={(e) => setRecaptchaToken(e.target.value)}
                 onChange={handleRecaptchaChange}
               />
             </div>
@@ -547,7 +561,7 @@ const Registration = () => {
        <Loading />
      </div>) :
      (
-            <div className="relative mx-auto  z-2 text-center font-albert font-semibold text-[2vw] shadow-sm text-black py-5 px-8 bg-no-repeat bg-center bg-contain w-fit transform hover:scale-105 transition-all ease-in-out delay-0 duration-3000 cursor-pointer" style={{
+            <div className="relative mx-auto  z-2 text-center font-albert font-semibold text-[1vw] flex justify-center items-center shadow-sm text-black py-4  px-4  bg-no-repeat bg-center bg-contain w-fit transform hover:scale-105 transition-all ease-in-out delay-0 duration-3000 cursor-pointer" style={{
                   backgroundImage: `url(${button})`,
                 }}>
               <button
@@ -565,6 +579,7 @@ const Registration = () => {
           //  <p className="p-3"> Next</p>
           // </div>
              )}
+             </div>
             {error && (
               <p className="text-sm sm:text-lg text-red-600 text-center mt-0">
                 {error}
@@ -573,7 +588,8 @@ const Registration = () => {
           </div>
         </form>
       </div>
-    </>
+      <img src={triangle} alt="" className="w-full absolute bottom-0" />
+    </div>
   );
 };
 
