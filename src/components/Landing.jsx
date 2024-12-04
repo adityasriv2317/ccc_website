@@ -61,7 +61,7 @@ const Landing = () => {
       }}
     >
       {/* hero */}
-      <div className="content w-[90vw] mx-auto mt-32 md:mt-6 flex flex-col md:flex-row items-center justify-between text-center text-white">
+      <div className="content w-[90vw] mx-auto mt-24 md:mt-6 flex flex-col md:flex-row items-center justify-between text-center text-white">
         {/* left */}
         <div className="left w-full md:w-1/2 flex flex-col items-center font-albert">
           <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
