@@ -8,7 +8,7 @@ import Carousel from "./Carousel";
 const About = () => {
   return (
     <div
-      className="about-page overflow-hidden bg-[rgb(8,8,8)] bg-no-repeat min-h-[100vh] md:min-h-[900px]"
+      className="about-page overflow-hidden bg-[rgba(20,20,20,0.8)] bg-no-repeat md:min-h-[900px]"
       id="team"
       style={{
         backgroundImage: `url(${bg})`,

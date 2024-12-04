@@ -1,5 +1,5 @@
 import React from 'react'
-import tod from "../assets/about/tod.jpg";
+// import tod from "../assets/about/tod.jpg";
 
 // imgs
 import akhand from "../assets/team/akhandSingh.jpg";
@@ -11,6 +11,7 @@ import shreeya from "../assets/team/shreeyaAggarwal.jpg";
 import sachendra from "../assets/team/sachendraGangwar.jpg";
 import prakhar from "../assets/team/prakharSrivastava.jpg";
 import kratika from "../assets/team/kratikaGupta.jpg";
+import kritika from "../assets/team/kritika.jpg";
 import harsh from "../assets/team/harshSingh.jpeg";
 import akshat from "../assets/team/akshatSingh.jpg";
 import aditya from "../assets/team/adityaKumar.jpeg";
@@ -40,12 +41,12 @@ const obj = [
     designation: "Frontend Developer",
     img: yash,
   },
-  // {
-  //   name: "Kritika",
-  //   surName: "Aggarwal",
-  //   designation: "ML Developer",
-  //   img: tod,
-  // },
+  {
+    name: "Kritika",
+    surName: "Agrawal",
+    designation: "ML Developer",
+    img: kritika,
+  },
   {
     name: "Sachendra",
     surName: "Gangwar",
@@ -96,7 +97,7 @@ const obj = [
   },
   {
     name: "Shreeya",
-    surName: "Aggarwal",
+    surName: "Agrawal",
     designation: "Backend Developer",
     img: shreeya,
   },
