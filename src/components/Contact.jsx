@@ -7,8 +7,8 @@ const Contact = () => {
     <div id="contact" >
       
       <div className="flex justify-center items-center bg-gray-1000">
-        <div className="text-white flex justify-center items-center bg-teal-500 flex-col w-11/12 md:w-8/12 lg:w-6/12 xl:w-4/12 h-auto py-5 rounded-md m-10" >
-          <h1 className="text-4xl  block text-center">Let's connect Networks</h1>
+        <div className="text-[rgb(150,198,245)] flex justify-center items-center bg-[rgba(50,50,50,0.5)] flex-col w-11/12 md:w-8/12 lg:w-6/12 xl:w-4/12 h-auto py-5 rounded-md m-10" >
+          <h1 className="text-4xl  block text-center">Connect With Us</h1>
           <form action="" className='m-4'>
             <div className='md:flex block gap-2'>
               <input

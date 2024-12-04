@@ -21,12 +21,12 @@ const About = () => {
         <img src={trapezium} className="mx:w-[7vw]" alt="" />
       </div>
 
-      <div className="mx-auto items-center mt-28">
+      <div className="mx-auto items-center mt-20">
         {/* img */}
         <img src={team} className="mx-auto mx:w-4/5 md:w-1/2" alt="" />
 
         <div
-          className="relative mt-0 hover:animate-pulse cursor-default mx-auto my-auto z-2 text-center items-center justify-center font-albert font-semibold text-[3vw] shadow-sm text-black py-2 px-6 bg-no-repeat bg-center bg-contain w-[30vw]"
+          className="relative mt-8 hover:animate-pulse cursor-default mx-auto my-auto z-2 text-center items-center justify-center font-albert font-semibold text-[3vw] shadow-sm text-black py-2 px-6 bg-no-repeat bg-center bg-contain w-[30vw]"
           style={{
             backgroundImage: `url(${button})`,
           }}
