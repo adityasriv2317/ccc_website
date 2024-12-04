@@ -231,15 +231,6 @@ const Registration = () => {
             </p>
           )}
         </div>
-        {/* <div>
-          <input
-            type="text"
-            value={team_name}
-            onChange={(e) => setteamName(e.target.value)}
-            className="text-sm z-50 mb-[-50] sm:text-xl text-white w-full pl-3 sm:pl-4 pr-10 sm:pr-12 py-2 sm:py-3 bg-black rounded-lg"
-            placeholder="Enter Team name"
-          />
-        </div> */}
         
         <form onSubmit={handleSubmit} className="space-y-6">
         <div>
