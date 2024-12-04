@@ -102,7 +102,7 @@ const Landing = () => {
         <h1 className="font-poppins mb-5 shadow-sm text-[rgb(150,198,245)] [text-shadow:0_0_5px_blue] animate-sd text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
           ABOUT US
         </h1>
-        <p className="font-jetbrains [text-shadow:0_0_5px_black] text-wrap text-justify overflow-y-auto mx:max-h-[18vh] animate-sr text-sm sm:text-base md:text-lg">
+        <p className="font-jetbrains [text-shadow:0_0_5px_black] text-wrap text-justify overflow-y-auto mx:max-h-[18vh] md:max-w-[35vw] animate-sr text-sm sm:text-base md:text-lg">
           Founded in February 2016, the Cloud Computing Cell at AKGEC empowers
           students with expertise across diverse domains like Web Development,
           Machine Learning, UI/UX Design, Backend Development, Cybersecurity,

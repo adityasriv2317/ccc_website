@@ -68,7 +68,7 @@ const obj = [
   {
     name: "Diya",
     surName: "Sirohi",
-    designation: "ML Developer",
+    designation: "Cloud Developer",
     img: diya,
   },
   {
@@ -86,7 +86,7 @@ const obj = [
   {
     name: "Kratika",
     surName: "Gupta",
-    designation: "App Developer",
+    designation: "Backend Developer",
     img: kratika,
   },
   {
@@ -98,13 +98,13 @@ const obj = [
   {
     name: "Shreeya",
     surName: "Agrawal",
-    designation: "Backend Developer",
+    designation: "ML Developer",
     img: shreeya,
   },
   {
     name: "Shreya",
     surName: "Mohan",
-    designation: "Backend Developer",
+    designation: "Cloud Developer",
     img: shreya,
   },
 ];

@@ -34,7 +34,7 @@ const Mentor = () => {
         {/* Mentor Section */}
         <div className="flex mx:flex-col md:flex-row md:mx-28 my-12 px-14 mx:px-16 w-full">
           {/* Left Section */}
-          <div className="flex flex-col justify-center items-center w-1/3 mx:ml-20 mx:w-2/3">
+          <div className="flex flex-col justify-center items-center w-1/3 mx:mx-auto mx:w-2/3">
             <img src={photo} className="px-2" alt="" />
             <img src={name} className="" alt="" />
           </div>
