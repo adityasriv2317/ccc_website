@@ -1,22 +1,23 @@
 import React from 'react';
 import invert from "../assets/invert.png";
+// import wires from "../assets/wires.png"
 
 const Contact = () => {
   return (
     <>
-      {/* Full Page Centering */}
-      <div className="flex justify-center items-center min-h-screen bg-gray-900">
-        <div className="text-white flex justify-center items-center flex-col bg-gray-900 w-11/12 md:w-8/12 lg:w-6/12 xl:w-4/12 h-auto py-5 rounded-md">
-          <h1 className="text-4xl text-start block">Let's connect Networks</h1>
-          <form action="">
-            <div>
+      
+      <div className="flex justify-center items-center bg-gray-1000">
+        <div className="text-white flex justify-center items-center bg-teal-500 flex-col w-11/12 md:w-8/12 lg:w-6/12 xl:w-4/12 h-auto py-5 rounded-md m-10" >
+          <h1 className="text-4xl  block text-center">Let's connect Networks</h1>
+          <form action="" className='m-4'>
+            <div className='md:flex block gap-2'>
               <input
                 type="text"
-                className="border-white border-2 rounded-md font-bolder px-3 text-white py-2 mt-4 bg-gray-900"
+                className="border-white border-2 rounded-md font-bolder px-3 md:w-6/12 w-full text-white py-2 mt-4 bg-black"
                 placeholder="First Name"
               />{" "}
               <input
-                className="border-white border-2 rounded-md font-bolder px-3 text-white py-2 bg-gray-900 mt-4"
+                className="border-white border-2 rounded-md font-bolder md:w-6/12 w-full px-3 text-white py-2 bg-black mt-4"
                 type="text"
                 placeholder="Last Name"
               />
@@ -24,20 +25,20 @@ const Contact = () => {
             <div>
               <input
                 type="text"
-                className="border-white border-2 rounded-md font-bolder px-3 text-white py-2 bg-gray-900 w-full mt-1"
+                className="border-white border-2 rounded-md font-bolder px-3 text-white py-2 bg-black w-full mt-1"
                 placeholder="Email"
               />
             </div>
             <div>
               <input
                 type="text"
-                className="border-white border-2 rounded-md font-bolder px-3 text-white py-2 bg-gray-900 w-full mt-1"
+                className="border-white border-2 rounded-md font-bolder px-3 text-white py-2 bg-black w-full mt-1"
                 placeholder="Phone Number"
               />
             </div>
             <input
               type="area"
-              className="border-white border-2 rounded-md font-bolder px-3 text-white py-10 bg-gray-900 w-full mt-1"
+              className="border-white border-2 rounded-md font-bolder px-3 text-white py-10 bg-black w-full mt-1"
               placeholder="Message"
             />
 
@@ -49,7 +50,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-      {/* Bottom Image */}
+    
       <div>
         <img src={invert} className="w-screen h-72" alt="" />
       </div>
@@ -57,4 +58,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Contact;
