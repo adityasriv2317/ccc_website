@@ -3,7 +3,7 @@ import React from "react";
 // import Landing from "./components/Landing";
 // import About from "./components/About";
 import Registration from "./components/Registration";
-
+import Contact from "./components/Contact"
 
 // import Carousel from './components/Carousel'
 
@@ -14,6 +14,7 @@ const App = () => {
   return (
     <div className="text-white font-poppins overflow-x-hidden">
       <Registration/>
+       <Contact/>
     </div>
   );
 };
