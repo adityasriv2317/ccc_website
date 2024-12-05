@@ -47,7 +47,6 @@ const Carousel = () => {
 
   return (
     <div className="mt-14 mb-20 items-center justify-center w-1/2 md:w-full mx-auto md:px-8 lg:px-16 relative">
-      {/* Heading */}
       {/* absolute hidden md:flex bg-[rgba(56,72,87,0.4)] rounded-2xl text-4xl font-albert font-bold [text-shadow:0_0_10px_black] text-center bg-opacity-20 backdrop-blur-sm z-30 bottom-0 max-w-[70vw] h-full md:w-[75vw] right-0 items-center justify-center */}
       <div className="font-albert text-4xl text-[rgb(150,198,255)] mx:text-center my-2">
         OUR TEAM
