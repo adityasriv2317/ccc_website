@@ -12,25 +12,23 @@ const Socials = () => {
   return (
     <div className="socials hidden md:flex text-[rgb(150,198,245)] justify-center items-center space-x-6">
       <a
-        href="https://instagram.com"
+        href="https://www.instagram.com/ccc_akgec"
         target="_blank"
-        rel="noopener noreferrer"
         aria-label="Instagram"
       >
         <FontAwesomeIcon icon={faInstagram} />
       </a>
 
       <a
-        href="https://linkedin.com"
+        href="https://www.linkedin.com/company/cloud-computing-cell-akgec/"
         target="_blank"
-        rel="noopener noreferrer"
         aria-label="LinkedIn"
       >
         <FontAwesomeIcon icon={faLinkedin} />
       </a>
 
       <a
-        href="https://mail.google.com"
+        href="mailto:cloudcomputing@akgec.ac.in"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="E-Mail"
