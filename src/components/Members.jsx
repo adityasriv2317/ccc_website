@@ -20,7 +20,7 @@ import aditya from "../assets/team/adityaKumar.jpeg";
 import taru from "../assets/team/final/taruPathak.jpg";
 import priya from "../assets/team/final/priya.jpg";
 import raghav from "../assets/team/final/raghav.jpg";
-import sarthak from "../assets/team/final/sarthak.jpg";
+import sarthak from "../assets/team/final/sarthakSrivastava.jpg";
 import devrat from "../assets/team/final/devrat.jpg";
 import atul from "../assets/team/final/atul.jpg";
 import anjani from "../assets/team/final/anjani.jpg";
